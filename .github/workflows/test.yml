@@ -1,0 +1,19 @@
+name: Run test_gcd.sh
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Make test script executable
+        run: chmod +x ./test_gcd.sh
+
+      - name: Run test script
+        run: ./test_gcd.sh
